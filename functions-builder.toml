@@ -10,11 +10,17 @@ run-image = "heroku/pack:18"
 
 [[buildpacks]]
   id = "heroku/node-function"
-  uri = "https://github.com/heroku/node-function-buildpack/releases/download/v0.4.1/node-function-buildpack-v0.4.1.tgz"
+#  uri = "https://github.com/heroku/node-function-buildpack/releases/download/v0.4.1/node-function-buildpack-v0.4.1.tgz"
+  uri = "/Users/tlongoria/go/src/github.com/heroku/node-function-buildpack/node-function-buildpack-v0.4.1.tgz"
+
+[[buildpacks]]
+  id = "heroku/node-plus-100"
+  uri = "https://github.com/hone/node-plus-100/releases/download/v0.1.0/rust-buildpack-1ccf3af.tar.gz"
 
 [[groups]]
   # node functions
   buildpacks = [
     { id = "heroku/nodejs", version = "latest" },
     { id = "heroku/node-function", version = "0.4.1" },
+    { id = "heroku/node-plus-100", version = "0.1.0" },
   ]
