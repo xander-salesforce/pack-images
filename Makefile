@@ -11,7 +11,7 @@ install-buildpacks:
 
 build: install-buildpacks deps
 	@docker pull heroku/heroku:18-build
-	@docker build -f Dockerfile.build -t heroku/pack:18-build .
+	@docker build -f Dockerfile.build -t heroku/pack:18-build . --build-arg SF_FX_GIT_SSH_KEY=${SF_FX_GIT_SSH_KEY}
 	@docker build -f Dockerfile.run -t heroku/pack:18 .
 	@pack create-builder heroku/buildpacks:18 --builder-config builder.toml --no-pull
 	@pack create-builder heroku/functions-buildpacks:nightly --builder-config functions-builder.toml --no-pull

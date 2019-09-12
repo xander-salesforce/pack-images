@@ -4,6 +4,9 @@ FROM heroku/heroku:18-build
 ARG docker_cred_helper_url=https://github.com/GoogleCloudPlatform/docker-credential-gcr/releases/download/v1.5.0/docker-credential-gcr_linux_amd64-1.5.0.tar.gz
 RUN curl -sfL ${docker_cred_helper_url} | tar xz -C /usr/local/bin
 
+ARG SF_FX_GIT_SSH_KEY
+ENV SF_FX_GIT_SSH_KEY=${SF_FX_GIT_SSH_KEY}
+
 ARG pack_uid=1000
 ARG pack_gid=1000
 ENV CNB_USER_ID=${pack_uid}
