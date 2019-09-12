@@ -15,6 +15,10 @@ version = "0.3.0"
   uri = "https://github.com/heroku/node-function-buildpack/releases/download/v0.4.2/node-function-buildpack-v0.4.2.tgz"
 
 [[buildpacks]]
+  id = "salesforce/puppeteer"
+  uri = "https://git.soma.salesforce.com/visualforce/puppeteer-cloud-native-buildpack/releases/download/0.0.1/puppeteer-cloud-native-buildpack-v0.0.1.tgz"
+
+[[buildpacks]]
   id = "heroku/java"
   uri = "https://github.com/heroku/java-buildpack/releases/download/v0.13/java-buildpack-v0.13.tgz"
 
@@ -27,6 +31,7 @@ version = "0.3.0"
   buildpacks = [
     { id = "heroku/nodejs", version = "v0.0.5.0.1" },
     { id = "heroku/node-function", version = "0.4.2" },
+    { id = "salesforce/puppeteer", version = "0.0.1" },
   ]
 
 [[groups]]
